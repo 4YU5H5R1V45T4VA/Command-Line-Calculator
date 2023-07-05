@@ -1,0 +1,89 @@
+Use Case Diagram : 
+1.	Main Diagram: 
+
+
++-----------------------+
+|    Calculator User    |
++-----------------------+
+        |
+        |
+        v
++-----------------------+
+|     Use Calculator     |
++-----------------------+
+|  - Enter Mathematical  |
+|    Expression          |
+|  - Calculate Result    |
+|  - View Result         |
+|  - Exit Calculator     |
++-----------------------+
+
+In this diagram, the user is the primary actor and the use case is "Use Calculator". The use case has four actions that the user can take: entering a mathematical expression, calculating the result of the expression, viewing the result, and exiting the calculator. These actions correspond to the basic functionality of the calculator.
+
+2.	Sub-Diagram for “Calculate Result” : 
+
++-----------------------+
+|  Calculate Result      |
++-----------------------+
+|  - Tokenize Input      |
+|  - Parse Input         |
+|  - Evaluate Expression |
+|  - Handle Errors       |
++-----------------------+
+
+In this diagram, the "Calculate Result" use case has four steps: tokenizing the user's input, parsing the input into postfix notation, evaluating the postfix expression, and handling any errors that may occur. If there are no errors, the result is returned to the user. If there are errors, an error message is returned instead.
+E-R Model Diagram: 
+
+1.	Main 
+
+
++------------------+
+|     Calculator   |
++------------------+
+|  + Tokenization   |
+|  + Parsing        |
+|  + Evaluator      |
+|  + UI             |
++------------------+
+
+
+	In this diagram, the main package is "Calculator", which contains four sub-packages representing the different modules of the calculator: Tokenization, Parsing, Evaluator, and UI. Each module can have its own set of classes and functions that implement its functionality. Note that this diagram does not represent any data relationships between entities, as there is no persistent data involved in the calculator.
+
+2.	Tokenization
+
++-----------------------+
+|     Tokenization       |
++-----------------------+
+|  + Token              |
+|  + TokenType          |
+|  + TokenList          |
++-----------------------+
+
+
+In this diagram, the Tokenization module contains three entities: Token, TokenType, and TokenList. Token represents a single unit of the user's input (e.g. a number, an operator, a parenthesis), TokenType represents the type of token (e.g. number, operator, parenthesis), and TokenList represents a list of tokens that make up the user's input. These entities could be represented with classes or data structures in the actual implementation of the module.
+
+3.	Parsing 
+
+
+
+
+
+
+
+
+	In this diagram, the Parsing module contains two entities: InfixExpression and PostfixExpression. InfixExpression represents the mathematical expression entered by the user in standard infix notation, while PostfixExpression represents the same expression in postfix notation, which is used for evaluation. These entities could be represented with classes or data structures in the actual implementation of the module.
+
+4.	Evaluator 
+
++-----------------------+
+|       Evaluator        |
++-----------------------+
+|  + Operand             |
+|  + Operator            |
+|  + Expression          |
+|  + EvaluationResult    |
++-----------------------+
+
+
+In this diagram, the Evaluator module contains four entities: Operand, Operator, Expression, and EvaluationResult. Operand represents a number in the expression, Operator represents an arithmetic operator, Expression represents the entire mathematical expression in postfix notation, and EvaluationResult represents the result of evaluating the expression. These entities could be represented with classes or data structures in the actual implementation of the module.
+
