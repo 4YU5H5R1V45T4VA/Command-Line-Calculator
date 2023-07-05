@@ -1,0 +1,47 @@
+Algorithms For Each Module:
+
+
+1.	Tokenization Module Algorithm:
+
+    - Initialize an empty list of tokens.
+    - Loop through each character in the input string.
+    - If the character is a number, append it to the current token.
+    - If the character is an operator or parenthesis, append the current token to the list of tokens and then append the operator or parenthesis as a new token.
+    - When the loop is finished, append the final token to the list of tokens.
+    - Return the list of tokens.
+
+2.	Parsing Module Algorithm:
+
+
+    - Initialize an empty stack for operators and an empty list for output.
+    - Loop through each token in the list of tokens.
+    - If the token is a number, append it to the output list.
+    - If the token is an operator or parenthesis, do the following:
+        - If the stack is empty or the token has higher precedence than the top operator on the stack, push the token onto the stack.
+        - If the token has lower or equal precedence than the top operator on the stack, pop operators from the stack and append them to the output list until a lower-precedence operator is reached, then push the token onto the stack.
+        - If the token is a left parenthesis, push it onto the stack.
+        - If the token is a right parenthesis, pop operators from the stack and append them to the output list until a left parenthesis is reached, then discard both parentheses.
+    - When the loop is finished, pop any remaining operators from the stack and append them to the output list.
+    - Return the output list.
+
+
+
+
+
+
+3.	Evaluator Module Algorithm:
+
+    - Initialize an empty stack for operands.
+    - Loop through each token in the list of parsed input.
+    - If the token is a number, push it onto the operand stack.
+    - If the token is an operator, pop the top two operands from the stack, perform the operation, and push the result back onto the stack.
+    - When the loop is finished, the final result should be the only item left on the operand stack.
+    - Return the final result.
+
+4.	Error Handling Module Algorithm:
+
+    - Loop through each token in the parsed input.
+    - If the token is not a number, operator, or valid parenthesis, return an error message indicating invalid input.
+    - If a division by zero is attempted during evaluation, return an error message indicating the division is undefined.
+    - If any other error is encountered, return a general error message indicating the calculation could not be performed.
+
