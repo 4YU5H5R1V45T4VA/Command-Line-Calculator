@@ -1,0 +1,103 @@
+1.	Main Module Diagram:
+
+
+
+        +------------------+           +------------------+
+        |                  |  Input    |                  |
+        |   Command Line   +----------->   Calculator     |
+        |     Interface    |           |   Engine         |
+        |                  |  Output   |                  |
+        +------------------+           +------------------+
+
+
+
+In this diagram, the user inputs calculations through the command line interface. The calculator engine then processes the input using tokenization and parsing algorithms to determine the order of operations and perform the calculation. The result is then outputted back to the command line interface for the user to see.The calculator engine itself can be broken down into several components, including a tokenizer to break the input down into separate tokens, a parser to determine the order of operations, and an evaluator to perform the actual arithmetic calculations. Error handling can also be incorporated into the engine to provide informative error messages to the user if they input something that cannot be calculated.
+2.	Calculator Module 
+
+        +-----------------------------------+
+        |            Calculator Engine      |
+        +-----------------------------------+
+        |          Tokenization Module      |
+        +-----------------------------------+
+        |             Parsing Module        |
+        +-----------------------------------+
+        |            Evaluator Module       |
+        +-----------------------------------+
+         |          Error Handling Module    |
+In this diagram, the calculator engine is broken down into four main modules: Tokenization, Parsing, Evaluator, and Error Handling.
+The Tokenization module takes the user input and breaks it down into separate tokens, such as numbers, operators, and parentheses. These tokens are then passed to the Parsing module.
+The Parsing module takes the tokens and determines the order of operations based on the rules of arithmetic. This involves identifying which operations should be performed first, taking into account parentheses and other grouping symbols. The parsed input is then passed to the Evaluator module.
+The Evaluator module takes the parsed input and performs the actual arithmetic calculations. This involves applying the order of operations and performing the necessary additions, subtractions, multiplications, and divisions. The final result is then passed back to the command line interface for the user to see.
+The Error Handling module is responsible for detecting and handling any errors that may occur during the calculation process. This includes checking for invalid input, division by zero, and other potential errors. If an error is detected, an informative error message is displayed to the user.
+
+2.1.	Tokenization Module Diagram
+
+        +-----------------------------------+
+        |          Tokenization Module       |
+        +-----------------------------------+
+        |           Input: User Input        |
+        |                                   |
+        |       +-----------------------+   |
+        |       | Tokenization Algorithm|   |
+        |       +-----------------------+   |
+        |                                   |
+        |            Output: Tokens        |
+        +-----------------------------------+
+
+In this diagram, the Tokenization module takes the user input as input, applies the Tokenization algorithm, and outputs the tokens.
+
+
+
+
+
+
+
+2.2.	Parsing Module Diagram
+
+        +-----------------------------------+
+        |            Parsing Module          |
+        +-----------------------------------+
+        |            Input: Tokens          |
+        |                                   |
+        |       +-----------------------+   |
+        |       |  Parsing Algorithm    |   |
+        |       +-----------------------+   |
+        |                                   |
+        |          Output: Parsed Input     |
+        +-----------------------------------+
+
+In this diagram, the Parsing module takes the tokens as input, applies the Parsing algorithm, and outputs the parsed input.
+
+
+2.3.	Evaluator Module Diagram: 
+
+        +-----------------------------------+
+        |            Evaluator Module        |
+        +-----------------------------------+
+        |         Input: Parsed Input        |
+        |                                   |
+        |       +-----------------------+   |
+        |       | Evaluator Algorithm   |   |
+        |       +-----------------------+   |
+        |                                   |
+        |            Output: Result         |
+        +-----------------------------------+
+
+
+In this diagram, the Evaluator module takes the parsed input as input, applies the Evaluator algorithm, and outputs the result.
+
+2.4.	Error Handling Module Diagram: 
+                         
+        +-----------------------------------+
+        |          Error Handling Module     |
+        +-----------------------------------+
+        |         Input: Parsed Input        |
+        |                                   |
+        |       +-----------------------+   |
+        |       |  Error Handling       |   |
+        |       +-----------------------+   |
+        |                                   |
+        |         Output: Error Message     |
+        +-----------------------------------+
+ 
+In this diagram, the Error Handling module takes the parsed input as input, applies the Error Handling algorithm, and outputs an informative error message if an error is detected.
