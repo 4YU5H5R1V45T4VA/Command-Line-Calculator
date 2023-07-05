@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Command Line Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+      }
+      
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      
+      form {
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #0062cc;
+      }
+      
+      #result {
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      
+      h2 {
+        color: #333;
+      }
+      
+      #output {
+        font-size: 20px;
+        color: #007bff;
+      }
+      
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Command Line Calculator</h1>
+    <form>
+      <label for="expression">Enter an expression to evaluate:</label>
+      <input type="text" id="expression" name="expression"><br><br>
+      <input type="submit" value="Calculate">
+    </form>
+    <br>
+    <div id="result">
+      <h2>Result:</h2>
+      <p id="output"></p>
+      <p class="error" id="error"></p>
+    </div>
+    <script>
+      function calculate() {
+        // get the input expression from the form
+        var expression = document.getElementById("expression").value;
+        
+        // create a new XMLHTTPRequest object
+        var xhr = new XMLHttpRequest();
+        
+        // set the request method and URL
+        xhr.open("POST", "/calculate", true);
+        
+        // set the request header
+        xhr.setRequestHeader("Content-Type", "application/json");
+        
+        // handle the response
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              var response = JSON.parse(xhr.responseText);
+              if (response.success) {
+                document.getElementById("output").innerHTML = response.result;
+                document.getElementById("error").innerHTML = "";
+              } else {
+                document.getElementById("output").innerHTML = "";
+                document.getElementById("error").innerHTML = response.error;
+              }
+            } else {
+              console
+
+
